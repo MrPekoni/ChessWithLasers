@@ -16,25 +16,25 @@ MonoBehaviour:
     supportShadowMask: 0
     supportSSR: 0
     supportSSRTransparent: 0
-    supportSSAO: 1
+    supportSSAO: 0
     supportSSGI: 0
-    supportSubsurfaceScattering: 1
+    supportSubsurfaceScattering: 0
     sssSampleBudget:
       m_Values: 140000002800000050000000
       m_SchemaId:
         m_Id: With3Levels
     supportVolumetrics: 0
     supportVolumetricClouds: 0
-    supportLightLayers: 1
+    supportLightLayers: 0
     supportWater: 0
     waterSimulationResolution: 128
     waterCPUSimulation: 0
     supportDistortion: 1
-    supportTransparentBackface: 1
-    supportTransparentDepthPrepass: 1
-    supportTransparentDepthPostpass: 1
+    supportTransparentBackface: 0
+    supportTransparentDepthPrepass: 0
+    supportTransparentDepthPostpass: 0
     colorBufferFormat: 74
-    supportCustomPass: 1
+    supportCustomPass: 0
     customBufferFormat: 12
     supportedLitShaderMode: 2
     planarReflectionResolution:
@@ -50,10 +50,11 @@ MonoBehaviour:
     supportSurfaceGradient: 0
     decalNormalBufferHP: 0
     msaaSampleCount: 1
-    supportMotionVectors: 1
+    supportMotionVectors: 0
+    supportDataDrivenLensFlare: 0
     supportRuntimeAOVAPI: 0
     supportDitheringCrossFade: 1
-    supportTerrainHole: 0
+    supportTerrainHole: 1
     lightProbeSystem: 0
     probeVolumeMemoryBudget: 1024
     probeVolumeBlendingMemoryBudget: 128
@@ -76,7 +77,7 @@ MonoBehaviour:
       reflectionProbeTexLastValidCubeMip: 3
       reflectionProbeTexLastValidPlanarMip: 0
       reflectionProbeDecreaseResToFit: 1
-      skyReflectionSize: 256
+      skyReflectionSize: 128
       skyLightingOverrideLayerMask:
         serializedVersion: 2
         m_Bits: 0
@@ -91,19 +92,19 @@ MonoBehaviour:
       maxLocalVolumetricFogSize: 32
       maxLocalVolumetricFogOnScreen: 64
     hdShadowInitParams:
-      maxShadowRequests: 128
+      maxShadowRequests: 64
       directionalShadowsDepthBits: 16
-      shadowFilteringQuality: 1
+      shadowFilteringQuality: 0
       areaShadowFilteringQuality: 0
       punctualLightShadowAtlas:
-        shadowAtlasResolution: 4096
+        shadowAtlasResolution: 1024
         shadowAtlasDepthBits: 16
         useDynamicViewportRescale: 1
       areaLightShadowAtlas:
         shadowAtlasResolution: 2048
         shadowAtlasDepthBits: 16
         useDynamicViewportRescale: 0
-      cachedPunctualLightShadowAtlas: 2048
+      cachedPunctualLightShadowAtlas: 1024
       cachedAreaLightShadowAtlas: 2048
       allowDirectionalMixedCachedShadows: 0
       shadowResolutionDirectional:
@@ -111,16 +112,16 @@ MonoBehaviour:
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionPunctual:
-        m_Values: 00010000000200000004000000080000
+        m_Values: 80000000000100000002000000040000
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionArea:
-        m_Values: 00010000000200000004000000080000
+        m_Values: 80000000000100000002000000040000
         m_SchemaId:
           m_Id: With4Levels
       maxDirectionalShadowMapResolution: 1024
       maxPunctualShadowMapResolution: 2048
-      maxAreaShadowMapResolution: 2048
+      maxAreaShadowMapResolution: 1024
       supportScreenSpaceShadows: 0
       maxScreenSpaceShadowSlots: 4
       screenSpaceShadowBufferFormat: 48
@@ -134,23 +135,23 @@ MonoBehaviour:
       lutFormat: 48
       bufferFormat: 74
     dynamicResolutionSettings:
-      enabled: 0
+      enabled: 1
       useMipBias: 0
-      enableDLSS: 0
+      enableDLSS: 1
       DLSSPerfQualitySetting: 0
-      DLSSInjectionPoint: 0
-      DLSSUseOptimalSettings: 0
+      DLSSInjectionPoint: 2
+      DLSSUseOptimalSettings: 1
       DLSSSharpness: 0
       fsrOverrideSharpness: 0
       fsrSharpness: 0.92
       maxPercentage: 100
-      minPercentage: 100
-      dynResType: 1
-      upsampleFilter: 1
+      minPercentage: 25
+      dynResType: 0
+      upsampleFilter: 4
       forceResolution: 0
       forcedPercentage: 100
       lowResTransparencyMinimumThreshold: 0
-      rayTracingHalfResThreshold: 50
+      rayTracingHalfResThreshold: 0
     lowresTransparentSettings:
       enabled: 1
       checkerboardDepthBuffer: 1
@@ -182,7 +183,7 @@ MonoBehaviour:
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000101
+        m_Values: 000000
         m_SchemaId:
           m_Id: 
     maximumLODLevel:
@@ -192,8 +193,8 @@ MonoBehaviour:
     lodBias:
       m_Values:
       - 1
-      - 1
-      - 1
+      - 0.69
+      - 0.01
       m_SchemaId:
         m_Id: With3Levels
     lightingQualitySettings:
@@ -289,10 +290,12 @@ MonoBehaviour:
   allowShaderVariantStripping: 1
   enableSRPBatcher: 1
   availableMaterialQualityLevels: -1
-  m_DefaultMaterialQualityLevel: 4
+  m_DefaultMaterialQualityLevel: 1
   diffusionProfileSettings: {fileID: 0}
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
+    streamingMipPreloadTexturesPerFrame: 0
+    streamingPreloadMipCount: 1
     streamingGpuCacheSettings:
     - format: 0
       sizeInMegaBytes: 128
