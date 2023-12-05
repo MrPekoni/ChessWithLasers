@@ -11,8 +11,8 @@ public class CameraRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        gameObject.transform.Rotate(0, 1, 0);
     }
 }
