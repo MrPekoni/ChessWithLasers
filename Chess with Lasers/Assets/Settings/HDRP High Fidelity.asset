@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: HDRP High Fidelity
   m_EditorClassIdentifier: 
   m_RenderPipelineSettings:
-    supportShadowMask: 1
+    supportShadowMask: 0
     supportSSR: 1
     supportSSRTransparent: 1
     supportSSAO: 1
     supportSSGI: 1
     supportSubsurfaceScattering: 1
     sssSampleBudget:
-      m_Values: 140000002800000050000000
+      m_Values: 1400000028000000a0000000
       m_SchemaId:
         m_Id: With3Levels
     supportVolumetrics: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
         m_Id: With3Levels
     supportDecals: 1
     supportDecalLayers: 0
-    supportSurfaceGradient: 0
+    supportSurfaceGradient: 1
     decalNormalBufferHP: 0
     msaaSampleCount: 1
     supportMotionVectors: 1
@@ -84,11 +84,11 @@ MonoBehaviour:
       supportFabricConvolution: 0
       maxDirectionalLightsOnScreen: 16
       maxPunctualLightsOnScreen: 512
-      maxAreaLightsOnScreen: 64
+      maxAreaLightsOnScreen: 128
       maxCubeReflectionOnScreen: 32
       maxPlanarReflectionOnScreen: 16
       maxDecalsOnScreen: 512
-      maxLightsPerClusterCell: 16
+      maxLightsPerClusterCell: 24
       maxLocalVolumetricFogSize: 32
       maxLocalVolumetricFogOnScreen: 64
     hdShadowInitParams:
@@ -123,10 +123,10 @@ MonoBehaviour:
       maxPunctualShadowMapResolution: 4096
       maxAreaShadowMapResolution: 4096
       supportScreenSpaceShadows: 1
-      maxScreenSpaceShadowSlots: 4
+      maxScreenSpaceShadowSlots: 8
       screenSpaceShadowBufferFormat: 48
     decalSettings:
-      drawDistance: 1000
+      drawDistance: 2048
       atlasWidth: 2048
       atlasHeight: 2048
       perChannelMask: 1
@@ -138,19 +138,19 @@ MonoBehaviour:
       enabled: 1
       useMipBias: 1
       enableDLSS: 1
-      DLSSPerfQualitySetting: 0
+      DLSSPerfQualitySetting: 2
       DLSSInjectionPoint: 2
       DLSSUseOptimalSettings: 1
       DLSSSharpness: 0
       fsrOverrideSharpness: 0
       fsrSharpness: 0.92
       maxPercentage: 100
-      minPercentage: 100
+      minPercentage: 75
       dynResType: 1
       upsampleFilter: 4
       forceResolution: 0
       forcedPercentage: 100
-      lowResTransparencyMinimumThreshold: 0
+      lowResTransparencyMinimumThreshold: 50
       rayTracingHalfResThreshold: 50
     lowresTransparentSettings:
       enabled: 1
@@ -192,15 +192,15 @@ MonoBehaviour:
         m_Id: With3Levels
     lodBias:
       m_Values:
-      - 1
-      - 1
+      - 0.01
+      - 0.01
       - 1
       m_SchemaId:
         m_Id: With3Levels
     lightingQualitySettings:
       AOStepCount: 040000000600000010000000
       AOFullRes: 000001
-      AOMaximumRadiusPixels: 200000002800000050000000
+      AOMaximumRadiusPixels: 200000002800000010000000
       AOBilateralUpsample: 000101
       AODirectionCount: 010000000200000004000000
       ContactShadowSampleCount: 060000000a00000010000000
@@ -216,13 +216,13 @@ MonoBehaviour:
       RTAORayLength:
       - 0.5
       - 3
-      - 20
+      - 120
       RTAOSampleCount: 010000000200000008000000
       RTAODenoise: 010101
       RTAODenoiserRadius:
       - 0.25
       - 0.5
-      - 0.65
+      - 1
       RTGIRayLength:
       - 50
       - 50
