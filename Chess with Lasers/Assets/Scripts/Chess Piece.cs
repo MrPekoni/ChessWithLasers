@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChessPiece : MonoBehaviour
 {
-    ChessTile chessTile;
     Vector2 Pos;
     public int Team;
     public Vector2 Position;
@@ -21,7 +20,6 @@ public class ChessPiece : MonoBehaviour
             Team = 2;
         }
         
-        chessTile = new ChessTile(Position, gameObject.name, Team);
     }
 
     // Update is called once per frame
