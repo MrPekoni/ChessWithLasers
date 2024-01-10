@@ -11,6 +11,6 @@ public class FlatChess : MonoBehaviour
     }
     void OnClick()
     {
-        Debug.Log(gameObject.name);
+
     }
 }
