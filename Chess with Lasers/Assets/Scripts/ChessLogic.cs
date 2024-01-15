@@ -3,11 +3,18 @@ using UnityEngine;
 
 public class ChessLogic : MonoBehaviour
 {
+    private ChessPiece chessPiece;
     public GameObject SelectedTile, SelectedPiece, DestinationTile, LastSelectedPiece;
     public bool StartTileSelected;
+    public int CurrentTeam, DestinationPieceTeam;
     public void MovePiece()
     {
-        
+        if (SelectedPiece != null)
+        {
+            chessPiece = SelectedPiece.GetComponent<ChessPiece>();
+            CurrentTeam = chessPiece.Team;
+        }
+
         if (SelectedPiece == null && StartTileSelected && SelectedTile != DestinationTile) 
         {
             Debug.Log("A Piece should have moved");
@@ -22,6 +29,6 @@ public class ChessLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 }
